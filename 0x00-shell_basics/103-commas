@@ -1,2 +1,2 @@
 #!/bin/bash
-ls -1Apv | grep -v / | LC_ALL=C sort -df | sed 's/$/,/' ls -1Apv | grep / | LC_ALL=C sort -df | sed 's/$/\//' 
+ls -xamp
