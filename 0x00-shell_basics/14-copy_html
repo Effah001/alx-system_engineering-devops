@@ -1,0 +1,2 @@
+#!/bin/bash
+cd ..; find . -maxdepth 2 -name "*.html" -type f -exec sh -c 'for file do if [ ! -e "${file##*/}" ] || [ "$file" -nt "${file##*/}" ]; then cp "$file" .; fi; done' sh {} +
