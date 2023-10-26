@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+# Parses Apache log files in a list format
+
+awk '{print "%s %s\n", $1, $9}' apache-access.log | sort | uniq -c | sort -rn
