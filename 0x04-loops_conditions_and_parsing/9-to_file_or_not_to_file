@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-# Checks if a school file exist
+# Checks if a school file exist, and it it's empty
 
 if [ -e "school" ]
 then
