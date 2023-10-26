@@ -2,9 +2,9 @@
 #Display Best School 10 times
 
 display=1
-while [ $display -le 10 ]
+while [ $display -le 11 ]
 do
-    if [ $display -eq 9 ]
+    if [ $display -eq 10 ]
     then
       echo "Hi"
     else
