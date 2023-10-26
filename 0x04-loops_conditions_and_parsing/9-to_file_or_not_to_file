@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-#Display the content of a directory
+#Checks if a school file exist
 
 if [ -e "school" ]
 then 
