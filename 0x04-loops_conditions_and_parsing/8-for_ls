@@ -1,4 +1,7 @@
 #!/usr/bin/env bash
 #Display the list of a directory
 
-ls -1 | cut -d'-' -f2-
+for x in $(ls)
+do
+    echo ls -1 | cut -d'-' -f2-
+done
