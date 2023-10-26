@@ -1,0 +1,18 @@
+#!/usr/bin/env bash
+#Display Best School 10 times
+
+Hour=0
+
+while [ $Hour -le 12 ]
+do
+	echo "Hour: $Hour"
+	
+	Minute=1
+	while [ $Minute -le 59 ]
+	do
+		echo $Minute
+		((Minute++))
+	done
+
+	((Hour++))
+done
