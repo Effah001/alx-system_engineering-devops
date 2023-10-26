@@ -1,0 +1,22 @@
+#!/usr/bin/env bash
+#Display Best School 10 times
+
+display=1
+
+while [ $display -le 100 ]
+do
+	if [ $((display % 3)) -eq 0 ] && [ $((display % 5)) -eq 0 ]
+	then
+		echo "FIzzBuzz"
+	elif [ $((display % 3)) -eq 0 ]
+	then
+		echo "Fizz"
+	elif [ $((display % 5)) -eq 0 ]
+	then
+		echo "Buzz"
+	else
+		echo $display
+	fi
+
+	((display++))
+done
