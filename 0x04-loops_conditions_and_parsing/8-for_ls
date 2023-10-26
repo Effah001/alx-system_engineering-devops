@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+#Display the list of a directory
+
+ls -1
