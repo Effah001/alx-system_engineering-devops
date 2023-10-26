@@ -8,6 +8,7 @@ do
     then
       echo "bad luck"
     elif [ $display -eq 8 ]
+      then
       echo "good luck"
     else
       echo "Best School"
