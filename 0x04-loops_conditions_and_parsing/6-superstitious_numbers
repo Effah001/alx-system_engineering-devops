@@ -1,0 +1,21 @@
+#!/usr/bin/env bash
+#Display Best School 10 times
+
+display=1
+
+while [ $display -le 20 ]
+do
+	if [ $display -eq 5 ]
+	then
+		echo "bad luck from china"
+	elif [ $display -eq 9 ]
+	then
+		echo "bad luck from Japan"
+  elif [ $display -eq 18 ]
+    then
+      echo "bad luck from Italy"
+	else
+      echo $display
+      ((display++))
+  fi
+done
