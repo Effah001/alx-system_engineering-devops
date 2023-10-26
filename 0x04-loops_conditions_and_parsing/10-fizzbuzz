@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-#Display Best School 10 times
+#displays numbers from 1 to 100
 
 display=1
 
