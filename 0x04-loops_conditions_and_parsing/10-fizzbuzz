@@ -7,7 +7,7 @@ while [ "$display" -lt 101 ]
 do
 	if [ $((display % 3)) -eq 0 ] && [ $((display % 5)) -eq 0 ]
 	then
-		echo "FIzzBuzz"
+		echo "FizzBuzz"
 	elif [ $((display % 3)) -eq 0 ]
 	then
 		echo "Fizz"
