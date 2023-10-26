@@ -4,4 +4,4 @@
 while IFS=':' read -r username password uid gid info home shell;
 do
 	echo "$username:$uid:$home"
-done <"/etc/passwd"
+done </etc/passwd
