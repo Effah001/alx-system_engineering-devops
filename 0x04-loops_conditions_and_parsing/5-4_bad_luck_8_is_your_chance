@@ -2,16 +2,18 @@
 #Display Best School 10 times
 
 display=1
+
 while [ $display -le 10 ]
 do
-    if [ $display -eq 4 ]
-    then
-      echo "bad luck"
-    elif [ $display -eq 8 ]
-      echo "good luck"
-    else
-      echo "Best School"
-    fi
+	if [ $display -eq 4 ]
+	then
+		echo "bad luck"
+	elif [ $display -eq 8 ]
+	then
+		echo "good luck"
+	else
+		echo "Best School"
+	fi
 
 	((display++))
 done
