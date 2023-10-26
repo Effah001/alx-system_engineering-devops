@@ -1,4 +1,4 @@
 #!/usr/bin/env bash
 #Display the list of a directory
 
-ls -1
+ls -1 | cut -d'-' -f2-
