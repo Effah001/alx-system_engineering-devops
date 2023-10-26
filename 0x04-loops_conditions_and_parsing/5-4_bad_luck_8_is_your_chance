@@ -5,7 +5,6 @@ display=1
 
 while [ $display -le 10 ]
 do
-<<<<<<< HEAD
 	if [ $display -eq 4 ]
 	then
 		echo "bad luck"
@@ -15,17 +14,6 @@ do
 	else
 		echo "Best School"
 	fi
-=======
-    if [ $display -eq 4 ]
-    then
-      echo "bad luck"
-    elif [ $display -eq 8 ]
-      then
-      echo "good luck"
-    else
-      echo "Best School"
-    fi
->>>>>>> 1b8a32fe8c03a45ce3c55d03b92c2b8ebe837f59
 
 	((display++))
 done
