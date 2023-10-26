@@ -1,7 +1,8 @@
 #!/usr/bin/env bash
 #Display the content of a directory
 
-for x in $(ls)
+list=$(ls)
+for x in $list;
 do
 	echo "$x" | cut -d '-' -f2-
 done
