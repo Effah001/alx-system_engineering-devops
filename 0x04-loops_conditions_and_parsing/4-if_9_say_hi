@@ -1,0 +1,15 @@
+#!/usr/bin/env bash
+#Display Best School 10 times
+
+display=1
+while [ $display -le 10 ]
+do
+    if [$display == 9]
+    then
+      echo "Hi"
+    else
+      echo "Best School"
+    fi
+
+	((display++))
+done
