@@ -2,9 +2,8 @@
 #Checks if a school file exist
 
 if [ -e "school" ]
-then 
+then
 	echo "school file exist"
-
 	if [ -s "school" ]
 	then
 		echo "school file is not empty"
