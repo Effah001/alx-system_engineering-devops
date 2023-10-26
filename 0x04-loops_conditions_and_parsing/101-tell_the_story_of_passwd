@@ -3,13 +3,13 @@
 
 while IFS=: read -r -a f
 do
-  username=${f[0]}
-  gid=${f[3]}
-  home=${f[5]}
-  shell=${f[6]}
-  uid=${f[2]}
-  password=${f[1]}
-  info=${f[4]}
+	username=${f[0]}
+	gid=${f[3]}
+	home=${f[5]}
+	shell=${f[6]}
+	uid=${f[2]}
+	password=${f[1]}
+	info=${f[4]}
 
-  echo "The user $username is part of the $gid gang, lives in $home and rides $shell. $uid's place is protected by the passcode $password. More info about the user here: $info"
+		echo "The user $username is part of the $gid gang, lives in $home and rides $shell. $uid's place is protected by the passcode $password. More info about the user here: $info"
 done < /etc/passwd
