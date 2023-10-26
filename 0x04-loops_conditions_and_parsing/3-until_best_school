@@ -2,7 +2,7 @@
 
 display=10
 
-while [ $display -gt 0 ]
+until [ $display -lt 1 ]
 do
 	echo "Best School"
 	((display--))
