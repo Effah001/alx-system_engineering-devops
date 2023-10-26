@@ -8,14 +8,17 @@ do
 	if [ $display -eq 5 ]
 	then
 		echo "bad luck from china"
+		echo 5
 	elif [ $display -eq 9 ]
 	then
+		echo 9
 		echo "bad luck from Japan"
-  elif [ $display -eq 18 ]
-    then
-      echo "bad luck from Italy"
+	elif [ $display -eq 18 ]
+	then
+		echo "bad luck from Italy"
+		echo 18
 	else
-      echo $display
-      ((display++))
-  fi
+		echo $display
+	fi
+	((display++))
 done
