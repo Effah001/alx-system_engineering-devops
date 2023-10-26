@@ -1,0 +1,7 @@
+#!/usr/bin/env bash
+display = 10
+while [$display -gt 0 ]
+do 
+    echo "Best School"
+    ((count--))
+done
