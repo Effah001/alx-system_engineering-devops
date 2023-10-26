@@ -5,20 +5,17 @@ display=1
 
 while [ $display -le 20 ]
 do
-	if [ $display -eq 5 ]
-	then
-		echo "bad luck from china"
-		echo 5
-	elif [ $display -eq 9 ]
-	then
-		echo 9
-		echo "bad luck from Japan"
-	elif [ $display -eq 18 ]
-	then
-		echo "bad luck from Italy"
-		echo 18
-	else
-		echo $display
-	fi
+	echo "$display"
+	case "$display" in
+		4)
+			echo "bad luck from china"
+			;;
+		9)
+			echo "bad luck from Japan"
+			;;
+		17)
+			echo "bad luck from Italy"
+			;;
+	esac
 	((display++))
 done
