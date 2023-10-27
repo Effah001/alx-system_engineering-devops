@@ -1,11 +1,4 @@
-<<<<<<< HEAD
 #!/usr/bin/env bash
 A Bash script that displays a list of currently running processes.
 
 ps auxf
-=======
-#!/usr/bin/env bash
-# A bash script that displays a list of currently running processes.
-
-ps auxf
->>>>>>> 077f5431ce7137c9326cafeed7cd5a0e42a37618
