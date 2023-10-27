@@ -1,4 +1,4 @@
 #!/usr/bin/env bash
 # A script that finds the running Bash process along with PID.
 
-pgrep -l 'bash'
+pgrep -l "bash"
