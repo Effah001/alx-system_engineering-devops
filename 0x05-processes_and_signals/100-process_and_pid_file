@@ -20,5 +20,6 @@ do
 	echo "To infinity and beyond"
 	sleep 2
 	trap 'echo "Y U no love me?!"' SIGINT
-	trap 'echo "I hate the kill command" && terminate' SIGTERM SIGQUIT
+	trap 'echo "I hate the kill command" && terminate' SIGTERM
+	trap 'terminate' SIGQUIT
 done
