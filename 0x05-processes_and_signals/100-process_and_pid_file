@@ -13,7 +13,7 @@ terminate()
 
 PID="$$"
 
-echo PID > /var/run/myscript.pid
+echo "$PID" > /var/run/myscript.pid
 
 while true
 do
