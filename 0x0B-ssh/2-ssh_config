@@ -1,0 +1,7 @@
+#!/usr/bin/env bash
+#connect to server without a password
+Host 309437-web-01
+	Hostname 18.233.64.208
+	User ubuntu
+	PasswordAuthentication no
+	IdentityFile ~/.ssh/school
