@@ -2,6 +2,7 @@
 #install nginx on webserver
 
 apt-get install -y nginx
+apt update -y
 
 echo  "Hello World!" > /var/www/html/index.html
 
