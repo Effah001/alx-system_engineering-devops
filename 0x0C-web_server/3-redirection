@@ -7,14 +7,15 @@ apt install nginx -y
 
 echo "Hello World!" > /var/www/html/index.html
 
-echo "server {
-    server_name localhost;
+new_str=$"\tlocation /redirect_me {\n\t\treturn 301 https://www.youtube.com/watch?v=_S7WEVLbQ-Y;\n\t}"
+sed -i '/^}$/i \ '"$new_str" /etc/nginx/sites-available/default
 
-    location /redirect_me {
-        rewrite ^/(.*)$ https://www.youtube.com/watch?v=QH2-TGUlwu4 permanent;
-    }
-}" > /etc/nginx/sites-available/default
+apt install ufw -y
 
 ufw allow 'Nginx HTTP'
 
-service nginx start
+# Enable the UFW firewall
+ufw enable
+
+service nginx restart
+
