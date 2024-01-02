@@ -1,10 +1,11 @@
 #!/usr/bin/env bash
-#install nginx
+#install nginx on the webserver 
+
 apt update -y
 apt install nginx -y
 
-# set the localhost default page
 echo  "Hello World!" > /var/www/html/index.html
 
 ufw allow 'NGINX HTTP'
+
 service nginx start
