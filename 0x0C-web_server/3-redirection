@@ -1,13 +1,11 @@
 #!/usr/bin/env bash
-# redirect 301 moved permanently
+#redirect permanently moved
 
 apt update -y
 apt install nginx -y
 
-ufw allow 'Nginx HTTP'
+echo  "Hello World!" > /var/www/html/index.html
 
-location / {
-		return 301 http://example.com/new_page;
-}
+ufw allow 'Nginx HTTP'
 
 service nginx start
