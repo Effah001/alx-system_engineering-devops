@@ -6,6 +6,6 @@ apt install nginx -y
 
 echo  "Hello World!" > /var/www/html/index.html
 
-ufw allow 'nginx HTTP'
+ufw allow 'Nginx HTTP'
 
 service nginx start
