@@ -1,21 +1,17 @@
 #!/usr/bin/env bash
 # redirect 
 
-apt update -y
+sudo apt update -y
 
-apt install nginx -y
+sudo apt install nginx -y
 
 echo "Hello World!" > /var/www/html/index.html
 
-new_str=$"\tlocation /redirect_me {\n\t\treturn 301 https://www.youtube.com/watch?v=_S7WEVLbQ-Y;\n\t}"
-sed -i '/^}$/i \ '"$new_str" /etc/nginx/sites-available/default
+redirect_string="rewrite ^/redirect_me https://www.youtube.com/watch?v=_S7WEVLbQ-Y permanent;"
+sudo sed -i "/server_name _;/a $redirect_string" /etc/nginx/sites-available/default
 
-apt install ufw -y
+sudo apt install ufw -y
 
-ufw allow 'Nginx HTTP'
+sudo ufw allow 'Nginx HTTP'
 
-# Enable the UFW firewall
-ufw enable
-
-service nginx restart
-
+sudo service nginx restart
