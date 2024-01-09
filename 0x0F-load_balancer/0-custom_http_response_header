@@ -17,8 +17,8 @@ echo "Ceci n'est pas une page" > /var/www/html/404.html
 err_str="error_page 404 /404.html;\n\tlocation = /404.html {\n\t\troot /var/www/html;\n\t\tinternal;\n\t};"
 sudo sed -i "/listen 80 default_server;/c $err_str" /etc/nginx/sites-available/default
 
-str="location / {"
-custom_head="location / {\n\tadd_header X-Served-By \$hostname;"
+passed_string="location / {"
+http_head="location / {\n\tadd_header X-Served-By \$hostname;"
 sudo sed -i "s|$str|$custom_head|" /etc/nginx/sites-available/default
 
 apt install ufw -y
