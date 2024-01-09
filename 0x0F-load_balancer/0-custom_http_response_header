@@ -19,7 +19,7 @@ sudo sed -i "/listen 80 default_server;/c $err_str" /etc/nginx/sites-available/d
 
 passed_string="location / {"
 http_head="location / {\n\tadd_header X-Served-By \$hostname;"
-sudo sed -i "s|$str|$custom_head|" /etc/nginx/sites-available/default
+sudo sed -i "s|$passed_string|$http_head|" /etc/nginx/sites-available/default
 
 apt install ufw -y
 
