@@ -18,4 +18,4 @@ backend http_back
     server 309437-web-02 52.87.235.79:80 check
 EOL
 
-sudo systemctl restart haproxy
+sudo service haproxy restart
