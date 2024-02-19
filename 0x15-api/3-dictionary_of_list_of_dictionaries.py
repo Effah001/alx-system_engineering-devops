@@ -4,7 +4,6 @@ Gather data from an API
 """
 import json
 import requests
-import sys
 
 
 def fetch_user_tasks(user_id):
@@ -38,4 +37,3 @@ def main():
 
 if __name__ == '__main__':
     main()
-
