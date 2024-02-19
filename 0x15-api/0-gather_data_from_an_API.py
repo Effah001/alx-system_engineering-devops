@@ -17,7 +17,7 @@ def fetch_todo_list(user_id):
         user = user['name']
         todos = todos_list.json()
         total = 0
-        compplete = 0
+        complete = 0
         task_done = []
         for task in todos:
             if (task['userId'] == user_id):
@@ -25,7 +25,7 @@ def fetch_todo_list(user_id):
                 if (task['completed']):
                     complete += 1
                     task_done.append(task['title'])
-        print(f"Employee {user} is done with tasks({completet}/{total}):")
+        print(f"Employee {user} is done with tasks({complete}/{total}):")
         for task in task_done:
             print(f"\t {task}")
 
