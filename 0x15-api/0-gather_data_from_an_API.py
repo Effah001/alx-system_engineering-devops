@@ -25,10 +25,11 @@ def fetch_todo_list(user_id):
         completed_task_titles = []
 
         for task in todos:
-            total += 1
-            if task['completed']:
-                done += 1
-                completed_task_titles.append(task['title'])
+            if (task['userId'] == user_id):
+                total += 1
+                if task['completed']:
+                    done += 1
+                    completed_task_titles.append(task['title'])
 
         print(f"Employee {user} is done with tasks ({done}/{total}):")
         for title in completed_task_titles:
