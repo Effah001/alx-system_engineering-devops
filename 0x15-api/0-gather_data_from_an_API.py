@@ -2,38 +2,32 @@
 """
 Fetch data from JSONPlaceholder API based on person ID
 """
-
 import requests
 import sys
 
 
 def fetch_todo_list(user_id):
-    """Fetch and display employee TODO list progress"""
-    todos_url = f"https://jsonplaceholder.typicode.com/todos?userId={user_id}"
-    user_url = f"https://jsonplaceholder.typicode.com/users/{user_id}"
+    todos_url = "https://jsonplaceholder.typicode.com/todos"
+    user_url = "https://jsonplaceholder.typicode.com/users" + f'/{user_id}'
+    todos_list = requests.get(todos_url)
+    user_list = requests.get(user_url)
 
-    list_todos = requests.get(todos_url)
-    list_user = requests.get(user_url)
-
-    if list_user.status_code == 200:
-        user = list_user.json()
+    if (user_list.status_code == 200):
+        user = user_list.json()
         user = user['name']
-
-        todos = list_todos.json()
+        todos = todos_list.json()
         total = 0
-        done = 0
-        completed_task_titles = []
-
+        compplete = 0
+        task_done = []
         for task in todos:
             if (task['userId'] == user_id):
                 total += 1
-                if task['completed']:
-                    done += 1
-                    completed_task_titles.append(task['title'])
-
-        print(f"Employee {user} is done with tasks ({done}/{total}):")
-        for title in completed_task_titles:
-            print(f"\t{title}")
+                if (task['completed']):
+                    complete += 1
+                    task_done.append(task['title'])
+        print(f"Employee {user} is done with tasks({completet}/{total}):")
+        for task in task_done:
+            print(f"\t {task}")
 
 
 if __name__ == "__main__":
