@@ -1,5 +1,4 @@
 #!/usr/bin/python3
-
 """API request to reddit for first 10 hot post"""
 
 import requests
