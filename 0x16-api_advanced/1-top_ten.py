@@ -10,7 +10,7 @@ def top_ten(subreddit):
         return 0
 
     user_agent = {'User-Agent': "TopHotPost/1.0 {by Wills}"}
-    url = f"https://www.reddit.com/r/{subreddit}/top.json"
+    url = f"https://www.reddit.com/r/{subreddit}/hot.json"
     response = requests.get(url, headers=user_agent)
 
     if response.status_code == 200:
