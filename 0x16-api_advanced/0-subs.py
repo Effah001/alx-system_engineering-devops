@@ -1,21 +1,25 @@
 #!/usr/bin/python3
-
-"""API request to reddit for subscribers"""
-
+"""
+Get the subscribers count of a subreddit
+"""
 import requests
 
-
 def number_of_subscribers(subreddit):
-    """count subreddit subscribers"""
+    """
+    Subreddit subscribers count
+    """
+    # Check if subreddit is None or not a string
+    if subreddit is None or not isinstance(subreddit, str):
+        return 0
 
-    user_agent = {'User-Agent': 'Mozilla/5.0 (X11; Ubuntu; Linux x86_64;'
-                  'rv: 123.0) Gecko/20100101 Firefox/123.0'}
     url = f"https://www.reddit.com/r/{subreddit}/about.json"
-    response = requests.get(url, headers=user_agent)
+    headers = {"User-Agent": "MySubs/1.0"}  # Custom User-Agent header
+    response = requests.get(url, headers=headers, allow_redirects=False)
 
+    # Check if the request was successful
     if response.status_code == 200:
         data = response.json()
-        subscribers = data['data']['subscribers']
-        return subscribers
-    else:
-        return 0
+        # Check if the 'subscribers' key exists in the response data
+        if 'subscribers' in data['data']:
+            return data['data']['subscribers']
+    return 0  # Return 0 for invalid subreddit or if subscribers count is not available
