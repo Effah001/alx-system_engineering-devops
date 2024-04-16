@@ -1,0 +1,18 @@
+#!/usr/bin/env bash
+# Print the domain and subdomain of a record
+
+# Assign command line arguments to variables
+domain=$1
+subdomain=$2
+
+# If subdomain is not provided, set it to "www" (or any default subdomain)
+if [ -z "$subdomain" ]; then
+    subdomain="www"
+fi
+
+# Use dig to retrieve DNS information for the specified domain and subdomain
+record_info=$(dig +short "$subdomain.$domain")
+
+# Check if the record_info is not empty
+echo "The subdomain [$subdomain] points to [$record_info]." | awk '{print "The subdomain ["$subdomain"] is a ["$record_type"] record and points to ["$record_info"]."}'
+

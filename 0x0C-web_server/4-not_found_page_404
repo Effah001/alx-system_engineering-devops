@@ -14,8 +14,8 @@ sudo sed -i "/server_name _;/a $redirect_string" /etc/nginx/sites-available/defa
 echo "Ceci n'est pas une page" > /var/www/html/404.html
 
 # Corrected line to update Nginx configuration with custom error page
-err_str="error_page 404 /404.html;\n\tlocation = /404.html {\n\t\tinternal;\n\t};"
-sudo sed -i "s/listen 80 default_server;/$err_str/" /etc/nginx/sites-available/default
+err_str="error_page 404 /404.html;\n\tlocation = /404.html {\n\t\troot /var/www/html;\n\t\tinternal;\n\t};"
+sudo sed -i "/listen 80 default_server;/c $err_str" /etc/nginx/sites-available/default
 
 apt install ufw -y
 
