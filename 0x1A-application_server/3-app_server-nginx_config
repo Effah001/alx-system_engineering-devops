@@ -17,8 +17,8 @@ server {
                 try_files $uri $uri/ =404;
         }
 
-	location /redirect_me {
-        return 301 https://www.youtube.com/watch?v=_S7WEVLbQ-Y;
+		location /redirect_me {
+				return 301 https://www.youtube.com/watch?v=_S7WEVLbQ-Y;
         }
 
 		location /airbnb-onepage {
