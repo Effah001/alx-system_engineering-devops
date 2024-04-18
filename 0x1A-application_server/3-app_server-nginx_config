@@ -1,46 +1,31 @@
-# Default server configuration
-#
+#defualt server configuration
+
 server {
-	listen 80 default_server;
-	listen [::]:80 default_server;
+        listen 80 default_server;
+        listen [::]:80 default_server;
 
-	root /var/www/html;
+		root /var/www/html;
 
-	index index.html index.htm index.nginx-debian.html;
+        # Add index.php to the list if you are using PHP
+        index index.html index.htm index.nginx-debian.html;
 
-	server_name justwills.tech;
+        server_name _;
 
-	location / {
-		add_header X-Served-By: $hostname;
-		try_files $uri $uri/ =404;
-	}
+        location / {
+                # First attempt to serve request as file, then
+                # as directory, then fall back to displaying a 404.
+                try_files $uri $uri/ =404;
+        }
 
-	error_page 404 /404.html;
-
-	location = /404.html {
-		internal;
-	}
-
-	location = /redirect_me {
-		# First attempt to serve request as file, then
-		# as directory, then fall back to displaying a 404.
-		#try_files $uri $uri/ =404;
-		return 301 https://www.youtube.com/watch?v=_S7WEVLbQ-Y;
-	}
-
-	location = /dabira {
-		return 301 https://www.youtube.com/watch?v=_S7WEVLbQ-Y;
-	}
-
- 	location /hbnb_static {
-		alias /data/web_static/current/;
-	}
+	location /redirect_me {
+        return 301 https://www.youtube.com/watch?v=_S7WEVLbQ-Y;
+        }
 
 	location /airbnb-onepage {
-		proxy_pass http://127.0.0.1:5000;
+	proxy_pass http://127.0.0.1:5000;
 	}
 
 	location /airbnb-dynamic/number_odd_or_even {
-		proxy_pass http://127.0.0.1:5001/number_odd_or_even;
+	proxy_pass http://127.0.0.1:5001/number_odd_or_even;
 	}
 }
